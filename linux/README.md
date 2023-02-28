@@ -1,0 +1,3 @@
+- ## [ubuntu on hyperv](hypervUbuntuREADME.md)
+- ## [ubuntu on aws](linux/awsUbuntuREADME.md)
+- ## [alpine on hyperv](linux/hypervAlpineREADME.md)
