@@ -1,2 +1,2 @@
-- [master](masterREADME.md)
+- [manager](managerREADME.md)
 - [worker](workerREADME.md)
