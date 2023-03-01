@@ -34,5 +34,3 @@ sudo newgrp docker
 sudo snap disable docker
 sudo snap enable docker
 ```
-## swarm:
-```docker swarm init```
