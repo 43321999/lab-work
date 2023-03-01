@@ -1,5 +1,2 @@
-- [00](00README.md)
-- [0a](0aREADME.md)
-- [0b](0bREADME.md)
-- …
-- [1f](1fREADME.md)
+- [master](masterREADME.md)
+- [worker](workerREADME.md)
