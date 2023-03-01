@@ -1,86 +1,16 @@
-# Runtime setup
-
-
-> ⚠️ | [markdown github](https://guides.github.com/features/mastering-markdown)
-> - | -
-
-> ⚠️ | [markdown stackedit](https://stackedit.io)
-> - | -
-
-# Base machine
-```mermaid
-    gantt
-      title  Process of installing guest VM №00
-      excludes    weekends
-      
-      section README.md
-      start sprint                :milestone, 2023-02-20, 0d
-      end sprint                  :milestone, 2023-03-04, 0d
-      
-      section INSTALLGUESTUBUNTU.md
-      install-guest-ubuntu.md     :cl1, 2023-02-20, 1d
-
-      click cl1 href "https://github.com/43321999/base-machine/INSTALLGUESTUBUNTU.md"
-```
+# Runtime setup:
+- [linux](linux/README.md) 
+- - [ssh](ssh/README.md)
+- - [docker](docker/README.md)
+- - [swarm](swarm/README.md)
 
 ## static local ip
 - login to http://192.168.0.1 / network / lan
 - copy MAC address
 - locate to Network / LAN / DHCP binding / IP-address: 192.168.0.22
 - paste MAC-address
-## ssh
-- remote shell
-```sh
-cp /etc/ssh/sshd_config /etc/ssh/sshd_config.ORIGINAL
-logout
-```
-- local shell
-```sh
-ssh-copy-id i@192.168.0.22
-```
-- remote shell
-```sh
-sed -i 's:#PasswordAuthentication yes:PasswordAuthentication no\nChallengeResponseAuthentication no:' /etc/ssh/sshd_config
-sed -i 's:#PubkeyAuthentication yes:PubkeyAuthentication yes:' /etc/ssh/sshd_config
-service ssh reload
-logout
-```
-## docker
-```sh
-# docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-#
-sudo apt-get remove docker docker-engine docker.io containerd runc
-#
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-#
-sudo mkdir -m 0755 -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-#
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-#
-sudo apt-get update
-#
-#
-#
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-# * You can change the configuration of this build by modifying the files $
-# * Additional certificates used by the Docker daemon to authenticate with$
-# **Running Docker as normal user** 
-#
-# By default, Docker is only accessible with root privileges (`sudo`). If $
-sudo addgroup --system docker
-sudo adduser $USER docker
-sudo newgrp docker
-sudo snap disable docker
-sudo snap enable docker
-```
+
+
 > 
 > __docker reccomends:__
 >```sh
@@ -173,3 +103,4 @@ https://www.asterisk.org
 ## openvpn server
 ## yukon app
 - [Node.js and yandex translate api](https://www.youtube.com/watch?v=DsCcK2s6TwU)
+	
