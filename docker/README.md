@@ -1,2 +1,2 @@
-[ubuntu](ubuntuREADME.md)
-[alpine](alpineREADME.md)
+- [ubuntu](ubuntuREADME.md)
+- [alpine](alpineREADME.md)
