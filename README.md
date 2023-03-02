@@ -2,7 +2,13 @@
 - [linux](linux/README.md) 
 - - [ssh](ssh/README.md)
 - - [docker](docker/README.md)
-- - [swarm](swarm/README.md)
+- The end.
+# cluster setup:
+- [swarm](swarm/README.md)
+- [nextcloud](nextcloud/README.md)
+- [wireguard]()
+# X11
+- [google-chrome]()
 
 ## static local ip
 - login to http://192.168.0.1 / network / lan
@@ -34,11 +40,7 @@
 >```
 >continue: youtu.be/DHgKLnyLwUQ
 >
-## swarm
-```sh
-	# docker swarm init --advertise-addr [fc00::]:1024
-	docker swarm init --advertise-addr fc00::
-```
+
 ## registry service
 [43321999/registry-stack](43321999/registry-stack)
 
