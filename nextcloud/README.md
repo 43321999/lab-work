@@ -1,2 +1,2 @@
-[nextcloud+postgres](postgresREADME.md)
-[nextcloud+redis+mariadb](mariadbREADME.md)
+- [nextcloud+postgres](postgresREADME.md)
+- [nextcloud+redis+mariadb](mariadbREADME.md)
