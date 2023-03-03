@@ -1,4 +1,13 @@
 # docker
+<details>
+    <summary>short</summary>
+    <p>
+        ```sh
+        curl -fsSL get.docker.com | sudo sh
+        ```
+    </p>
+</details>
+<details><summary>long</summary>
 ```sh
 # docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 #
@@ -34,3 +43,4 @@ sudo newgrp docker
 sudo snap disable docker
 sudo snap enable docker
 ```
+</details>
