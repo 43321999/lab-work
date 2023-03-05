@@ -1,2 +1,3 @@
-- [nextcloud+postgres](postgresREADME.md)
-- [nextcloud+redis+mariadb](mariadbREADME.md)
+- [AIO](aioREADME.md)
+- [with postgres](postgresREADME.md)
+- [with redis & mariadb](mariadbREADME.md)
