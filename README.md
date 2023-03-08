@@ -5,7 +5,7 @@
 - The end.
 # cluster setup:
 - [swarm](swarm/README.md)
-- [nextcloud](nextcloud/README.md)
+- [nfs](nfs/README.md)
 - [wireguard]()
 # X11
 - [google-chrome]()
