@@ -8,3 +8,11 @@
 - [1. Sample](1sampleREADME.md)
 - [2. Sample](2sampleREADME.md)
 - [3. Sample](3sampleREADME.md)
+
+> [link](https://nfs.sourceforge.net/nfs-howto/ar01s02.html)
+> [another link](https://packages.ubuntu.com/ru/bionic/nfs-kernel-server)
+>
+> ```sh
+> apt update
+> # apt install nfs-utils(nfs-common nfs-kernel-server) mount
+> ```
