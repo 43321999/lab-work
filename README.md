@@ -1,59 +1,30 @@
 # Runtime setup:
-- [linux](linux/README.md) 
-- - [ssh](ssh/README.md)
-- - [docker](docker/README.md)
-- The end.
-# cluster setup:
-- [swarm](swarm/README.md)
-- [nfs](nfs/README.md)
-- [wireguard]()
+- [linux distribution](linux/README.md) 
+- [remote management](ssh/README.md)
+- [private network]()
+# Cluster setup:
+- [virtualization](docker/README.md)
+- [orchestrator](swarm/README.md)
+- [overlay storage](nfs/README.md)
+# Microservices:
+- repo link
+- …
+- …
+
 # X11
 - [google-chrome]()
 
-## static local ip
-- login to http://192.168.0.1 / network / lan
-- copy MAC address
-- locate to Network / LAN / DHCP binding / IP-address: 192.168.0.22
-- paste MAC-address
-
-
-> 
-> __docker reccomends:__
->```sh
-># collectd: losst.ru/nastrojka-collectd-dlya-nachinayushhih
-># ⭐️⭐️⭐️⭐️⭐️
->```
->```sh
-># nagios core: youtu.be/DHgKLnyLwUQ GUI🥴
->apt update && apt upgrade
->apt install wget unzip curl openssl build-essential libgd-dev >libssl-dev l$
->export VER="4.4.7"
->curl -SL https://github.com/NagiosEnterprises/nagioscore/releases/>download$
->cd nagios-4.4.7/
->./configure
->make all
->make install-groups-users
->groupadd -r nagios
->useradd -g nagios nagios
->usermod -a -G nagios www-data
-># nagios continue: youtu.be/DHgKLnyLwUQ
->```
->continue: youtu.be/DHgKLnyLwUQ
->
-
+## [vpn](https://docs.docker.com/samples/wireguard/)
+```sh
+        # wireguard service
+```
 ## registry service
 [43321999/registry-stack](43321999/registry-stack)
 
 ## X11 swarm services
-- 
-### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
-- 
+## wekan
 ```sh
-        # gimp service
-
-# sudo apt update
-# sudo apt upgrade -y
-# sudo apt install gimp -y
+        # wekan service
 ```
 ### [google-chrome](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
 ```sh
@@ -64,18 +35,16 @@
 # sudo apt install --fix-broken -y
 # sudo dpkg -i google-chrome-stable_current_a$
 ```
-## wekan
+### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
 ```sh
-        # wekan service
-```
-## [vpn](https://docs.docker.com/samples/wireguard/)
-```sh
-        # wireguard service
-```
+        # gimp service
 
-## [nextcloud](https://docs.docker.com/samples/nextcloud/)
+# sudo apt update
+# sudo apt upgrade -y
+# sudo apt install gimp -y
+```
 ```sh
-        # nextcloud service
+# krita
 ```
 ## [?!?!node](https://nodejs.org/)
 ```sh
@@ -106,3 +75,36 @@ https://www.asterisk.org
 ## yukon app
 - [Node.js and yandex translate api](https://www.youtube.com/watch?v=DsCcK2s6TwU)
 	
+	
+	
+==============================
+## static local ip
+- login to http://192.168.0.1 / network / lan
+- copy MAC address
+- locate to Network / LAN / DHCP binding / IP-address: 192.168.0.22
+- paste MAC-address
+
+
+> 
+> __docker reccomends:__
+>```sh
+># collectd: losst.ru/nastrojka-collectd-dlya-nachinayushhih
+># ⭐️⭐️⭐️⭐️⭐️
+>```
+>```sh
+># nagios core: youtu.be/DHgKLnyLwUQ GUI🥴
+>apt update && apt upgrade
+>apt install wget unzip curl openssl build-essential libgd-dev >libssl-dev l$
+>export VER="4.4.7"
+>curl -SL https://github.com/NagiosEnterprises/nagioscore/releases/>download$
+>cd nagios-4.4.7/
+>./configure
+>make all
+>make install-groups-users
+>groupadd -r nagios
+>useradd -g nagios nagios
+>usermod -a -G nagios www-data
+># nagios continue: youtu.be/DHgKLnyLwUQ
+>```
+>continue: youtu.be/DHgKLnyLwUQ
+>
