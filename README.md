@@ -7,9 +7,9 @@
 - [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
-- repo link
-- …
-- …
+- [registry](https://github.com/43321999/registry-stack)
+- [google-chrome]()
+- [wekan]()
 
 # X11
 - [google-chrome]()
