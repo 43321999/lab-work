@@ -7,6 +7,20 @@
         ```
     </p>
 </details>
+
+<details>
+    <summary>short2</summary>
+    <p>
+        ```sh
+        sudo apt-get update
+        sudo apt-get -y install docker.io
+        ```
+    </p>
+</details>
+
+
+
+
 <details><summary>long</summary>
 ```sh
 # docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
