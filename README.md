@@ -1,7 +1,7 @@
 # Runtime setup:
 - [linux distribution](linux/README.md) 
 - [remote management](ssh/README.md)
-- [private network]()
+- [private network](wireguard/README.md)
 # Cluster setup:
 - [virtualization](docker/README.md)
 - [orchestrator](swarm/README.md)
@@ -75,7 +75,7 @@ https://www.asterisk.org
 ## yukon app
 - [Node.js and yandex translate api](https://www.youtube.com/watch?v=DsCcK2s6TwU)
 	
-	
+## [samba](https://ubuntu.com/server/docs/samba-introduction)
 	
 ==============================
 ## static local ip
@@ -92,19 +92,6 @@ https://www.asterisk.org
 ># ⭐️⭐️⭐️⭐️⭐️
 >```
 >```sh
-># nagios core: youtu.be/DHgKLnyLwUQ GUI🥴
->apt update && apt upgrade
->apt install wget unzip curl openssl build-essential libgd-dev >libssl-dev l$
->export VER="4.4.7"
->curl -SL https://github.com/NagiosEnterprises/nagioscore/releases/>download$
->cd nagios-4.4.7/
->./configure
->make all
->make install-groups-users
->groupadd -r nagios
->useradd -g nagios nagios
->usermod -a -G nagios www-data
-># nagios continue: youtu.be/DHgKLnyLwUQ
+># nagios: 
+># GUI 🤨
 >```
->continue: youtu.be/DHgKLnyLwUQ
->
