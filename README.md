@@ -92,6 +92,6 @@ https://www.asterisk.org
 ># ⭐️⭐️⭐️⭐️⭐️
 >```
 >```sh
-># nagios: 
+># nagios: ubuntu.com/server/docs/monitoring-nagios-munin
 ># GUI 🤨
 >```
