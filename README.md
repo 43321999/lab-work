@@ -92,6 +92,13 @@ https://www.asterisk.org
 ># ⭐️⭐️⭐️⭐️⭐️
 >```
 >```sh
-># nagios: ubuntu.com/server/docs/monitoring-nagios-munin
+># nagios (alert monitoring): https://ubuntu.com/server/docs/tools-nagios
 ># GUI 🤨
+>```
+>
+> __ubuntu reccomends:__
+>```sh
+># nagios and munin: ubuntu.com/server/docs/monitoring-nagios-munin # nagios and munin owerview: https://youtu.be/8yBTADrD4hk
+>#
+># munín (dashboard monitoring): https://ubuntu.com/server/docs/tools-munin
 >```
