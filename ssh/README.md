@@ -1,2 +1,1 @@
-- [ubuntu](ubuntuREADME.md)
-- [alpine](alpineREADME.md)
+Setup samples: [ubuntu](samples/0.md) | [ubuntu](samples/1.md) | [alpine](samples/2.md)
