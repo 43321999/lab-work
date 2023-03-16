@@ -4,11 +4,7 @@
 >
 > \+ Data is transmitted in the transparent form.
 
-- [0. Sample](0sample.md)
-- [1. Sample](1sample.md) 
-- [2. Sample](2sample.md)
-- [3. Sample](3sample.md)
-- [4. Sample](4sample.md)
+Setup samples: [0](samples/0.md) | [1](samples/1.md) | [2](samples/2.md) | [3](samples/3.md) | [4](samples/4.md)
 
 > [link](https://nfs.sourceforge.net/nfs-howto/ar01s02.html)
 > [another link](https://packages.ubuntu.com/ru/bionic/nfs-kernel-server)
