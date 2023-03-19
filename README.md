@@ -1,10 +1,10 @@
 # Runtime setup:
 - [linux distribution](linux/README.md) 
 - [remote management](ssh/README.md)
-- [private network](wireguard/README.md)
 # Cluster setup:
 - [virtualization](docker/README.md)
 - [orchestrator](swarm/README.md)
+- [private network](wireguard/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/registry-stack)
