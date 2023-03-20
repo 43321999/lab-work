@@ -3,8 +3,8 @@
 - [remote management](ssh/README.md)
 # Cluster setup:
 - [virtualization](docker/README.md)
-- [orchestrator](swarm/README.md)
 - [private network](wireguard/README.md)
+- [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/registry-stack)
