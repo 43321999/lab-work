@@ -3,10 +3,20 @@
   - AMI: Free tier eligible
   - Instance type: Free tier eligible
   - Key pair (login): create new key pair
-    - …
+    - Key pair name: <my-linux-server-dd-mm-yyyy>
+    - create new key pair
+    - ```mv Downloads/<my-linux-server-dd-mm-yyyy.pem> ~/.ssh && chmod 400 ~/.ssh/<my-linux-server-dd-mm-yyyy.pem> ```
   - Network settings: Create security group
     - ☐ SSH ☐ HTTPS ☐ HTTP
   - Configure storage
     - 1 x 30 GIB
   - Launch Instance
-- 
+- select running instance
+  - Security tab
+  - Click security goup name
+  - select inbound tab
+  - edit inbound rules
+    - Add rule: All traffic, Anywhere ipv4
+    - Add rule: All traffic, Anywhere ipv6
+    - Save rules
+-  EC2 dashboard: check instance & connect button
