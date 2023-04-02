@@ -1,1 +1,12 @@
-
+- click launch instance
+  - name: My Linux Server
+  - AMI: Free tier eligible
+  - Instance type: Free tier eligible
+  - Key pair (login): create new key pair
+    - …
+  - Network settings: Create security group
+    - ☐ SSH ☐ HTTPS ☐ HTTP
+  - Configure storage
+    - 1 x 30 GIB
+  - Launch Instance
+- 
