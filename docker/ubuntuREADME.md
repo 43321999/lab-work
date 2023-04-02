@@ -1,28 +1,4 @@
 # docker
-<details>
-    <summary>short</summary>
-    <p>
-        ```sh
-        curl -fsSL get.docker.com | sudo sh
-        ```
-    </p>
-</details>
-
-<details>
-    <summary>short2</summary>
-    <p>
-        ```sh
-        sudo apt-get update
-        sudo apt-get -y install docker.io
-        ```
-    </p>
-</details>
-
-
-
-
-<details><summary>long</summary>
-
 ```sh
 # docker https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 #
@@ -57,17 +33,4 @@ sudo adduser $USER docker
 sudo newgrp docker
 sudo snap disable docker
 sudo snap enable docker
-```
-</details>
-
-```sh
-# By default, Docker is only accessible with root privileges (`sudo`). If $
-sudo addgroup --system docker
-sudo adduser $USER docker
-sudo newgrp docker
-sudo snap disable docker
-sudo snap enable docker
-#
-# for more info see the long section above ☝️
-#
 ```
