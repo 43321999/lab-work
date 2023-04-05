@@ -16,7 +16,11 @@
 
 ## [vpn](https://docs.docker.com/samples/wireguard/)
 ```sh
-        # wireguard service
+        # hidemyass services:
+	# - ipv6 sharing with wireguard: https://errande.com/2021/01/wireguard-he-tunnel/#wireguard-configuration
+	# - «tunnelbroker» free subnet: BSd6pLTGkoGYXjtxFNBcGA7iGwOfeV gmail.com
+	# - nodejs proxy:
+	# - vpn load balancing
 ```
 ## registry service
 [43321999/registry-stack](43321999/registry-stack)
@@ -49,6 +53,7 @@
 ## [?!?!node](https://nodejs.org/)
 ```sh
         # swarm service
+
 ```
 -
 ## [postgres](https://ubuntu.com/server/docs/databases-postgresql)
@@ -74,7 +79,15 @@ https://www.asterisk.org
 ## openvpn server
 ## yukon app
 - [Node.js and yandex translate api](https://www.youtube.com/watch?v=DsCcK2s6TwU)
-	
+
+## let's encrypt
+```sh
+	# certbot.eff.org
+	# free .com subdomains: 
+	#   - freedns.afraid.org/subdomain/
+	#     - 2ua7ogmvjc6d mail.ru
+```
+
 ## [samba](https://ubuntu.com/server/docs/samba-introduction)
 	
 ==============================
