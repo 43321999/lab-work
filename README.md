@@ -86,6 +86,9 @@ https://www.asterisk.org
 	# free .com subdomains: 
 	#   - freedns.afraid.org/subdomain/
 	#     - 2ua7ogmvjc6d mail.ru
+	#
+	# search for "ipv6 tunnel broker kz" 
+	#
 	
 	# полезные программы для поиска доменов: wwhois.ru/favorite_programs.html
 	# массовая проверка доменов на занятость: wwhois.ru/masswhois.php
