@@ -1,6 +1,7 @@
 # Runtime setup:
 - [linux distribution](linux/README.md) 
 - [remote management](ssh/README.md)
+- [vscode tunnel](vscode/README.md)
 # Cluster setup:
 - [virtualization](docker/README.md)
 - [intranet](wireguard/README.md)
