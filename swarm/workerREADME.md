@@ -1,2 +1,2 @@
 # swarm
- ```docker swarm init```
+ ```docker swarm join --token <token> [fc00::]```
