@@ -1,9 +1,10 @@
 # Runtime setup:
 - [linux distribution](linux/README.md) 
 - [remote management](ssh/README.md)
+- [virtualization](docker/README.md)
+- [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
 # Cluster setup:
-- [virtualization](docker/README.md)
 - [intranet](wireguard/README.md)
 - [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
