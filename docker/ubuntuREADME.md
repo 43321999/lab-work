@@ -31,6 +31,4 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo addgroup --system docker
 sudo adduser $USER docker
 sudo newgrp docker
-sudo snap disable docker
-sudo snap enable docker
 ```
