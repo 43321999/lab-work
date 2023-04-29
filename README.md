@@ -89,7 +89,7 @@ https://www.asterisk.org
 	#   - freedns.afraid.org/subdomain/
 	#     - 2ua7ogmvjc6d mail.ru
 	#
-	# search for "ipv6 tunnel broker kz" 
+	# search for "ipv6 tunnel broker kz" : vk.com/public130358072?w=wall-130358072_178
 	#
 	
 	# полезные программы для поиска доменов: wwhois.ru/favorite_programs.html
