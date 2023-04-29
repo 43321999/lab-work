@@ -9,9 +9,10 @@
 - [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
-- [registry](https://github.com/43321999/registry-stack)
-- [google-chrome]()
+- [registry](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#registry-service)
+- [google-chrome](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#google-chrome)
 - [wekan]()
+- [ci/cd](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#cicd)
 
 # X11
 - [google-chrome]()
@@ -26,7 +27,7 @@
 ```
 ## registry service
 [43321999/registry-stack](43321999/registry-stack)
-
+[registry](https://github.com/43321999/registry-stack)
 ## X11 swarm services
 ## wekan
 ```sh
@@ -97,7 +98,8 @@ https://www.asterisk.org
 ```
 
 ## [samba](https://ubuntu.com/server/docs/samba-introduction)
-	
+
+## ci/cd
 ==============================
 ## static local ip
 - login to http://192.168.0.1 / network / lan
