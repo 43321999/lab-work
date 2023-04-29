@@ -9,10 +9,10 @@
 - [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
-- [registry](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#registry-service)
-- [google-chrome](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#google-chrome)
-- [wekan]()
-- [ci/cd](https://github.com/43321999/RuntimeSetup/edit/mvp/README.md#cicd)
+- [registry](https://github.com/43321999/RuntimeSetup#registry-service)
+- [google-chrome](https://github.com/43321999/RuntimeSetup#google-chrome)
+- [wekan](https://github.com/43321999/RuntimeSetup#wekan)
+- [ci/cd](https://github.com/43321999/RuntimeSetup#cicd)
 
 # X11
 - [google-chrome]()
@@ -28,6 +28,7 @@
 ## registry service
 [43321999/registry-stack](43321999/registry-stack)
 [registry](https://github.com/43321999/registry-stack)
+[vita kalman comment:](https://vk.com/public130358072?w=wall-130358072_149)
 ## X11 swarm services
 ## wekan
 ```sh
