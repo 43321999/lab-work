@@ -101,6 +101,7 @@ https://www.asterisk.org
 ## [samba](https://ubuntu.com/server/docs/samba-introduction)
 
 ## ci/cd
+[couple words](vk.com/@-130358072-devops)
 ==============================
 ## static local ip
 - login to http://192.168.0.1 / network / lan
