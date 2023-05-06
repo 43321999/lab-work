@@ -34,7 +34,7 @@
 ```sh
         # wekan service
 ```
-### [google-chrome](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
+### [google-chrome](https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
 ```sh
         # google-chrome service
 # cd /tmp
