@@ -10,12 +10,11 @@
 - [overlay storage](nfs/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
-- [google-chrome](https://github.com/43321999/RuntimeSetup#google-chrome)
+- [X11](gui/README.md)
 - [wekan](https://github.com/43321999/RuntimeSetup#wekan)
 - [ci/cd](https://github.com/43321999/RuntimeSetup#cicd)
 
 # X11
-- [google-chrome]()
 
 ## [vpn](https://docs.docker.com/samples/wireguard/)
 ```sh
@@ -33,15 +32,6 @@
 ## wekan
 ```sh
         # wekan service
-```
-### [google-chrome](https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
-```sh
-        # google-chrome service
-# cd /tmp
-# sudo wget https://dl.google.com/linux/direc$
-# sudo dpkg -i google-chrome-stable_current_a$
-# sudo apt install --fix-broken -y
-# sudo dpkg -i google-chrome-stable_current_a$
 ```
 ### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
 ```sh
