@@ -29,10 +29,6 @@
 [registry](https://github.com/43321999/registry-stack)
 [vita kalman comment:](https://vk.com/public130358072?w=wall-130358072_149)
 ## X11 swarm services
-## wekan
-```sh
-        # wekan service
-```
 ### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
 ```sh
         # gimp service
