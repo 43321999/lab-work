@@ -5,7 +5,7 @@
 - [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
 # Cluster setup:
-- [intranet](wireguard/README.md)
+- [vIntranet](wireguard/README.md)
 - [orchestrator](swarm/README.md)
 - [overlay storage](nfs/README.md)
 # Microservices:
