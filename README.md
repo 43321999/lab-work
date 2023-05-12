@@ -11,7 +11,6 @@
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
 - [X11](gui/README.md)
-- [wekan](https://github.com/43321999/RuntimeSetup#wekan)
 - [ci/cd](https://github.com/43321999/RuntimeSetup#cicd)
 
 # X11
