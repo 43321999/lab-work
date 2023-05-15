@@ -1,6 +1,6 @@
 # gui
 ## google-chrome
-samples: [docker](google-chrome/samples/0.md) | [playwright](google-chrome/samples/1.md) | [LXC](https://ubuntu.com/server/docs/containers-lxd) | [WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
+samples: [docker](google-chrome/samples/0.md) | [playwright](google-chrome/samples/1.md) | [LXC](lxc/samples/0.md) | [WSL](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
 ## wekan
 samples: […](wekan/samples/0.md) | […]() | …
 ## …
