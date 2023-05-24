@@ -1,18 +1,11 @@
 # Installing guest VM №00
-## Disk
-~~- Control panel / Right click to Windows button / Disk Management~~
-~~- Create 44GB I: (VPS Storage) disk~~
-## Network
-- Open Hyper-V Manager
-- Virtual Switch Manager... / New virtual network switch / External
-- Name: external network virtual switch
-- OK
+
 ## VM creation
 - Open Hyper-V Manager
 - New/Virtual Machine
 - Specify Name and Location: Name: ubuntu-server-22.164
 - Specify Generation: Generation 2
-- Assign Memory: Startup memory: 8192; ☑ Use Dynamic Memory for this virtual machine;
+- Assign Memory: Startup memory: 14336; ☑ Use Dynamic Memory for this virtual machine;
 - Configure networking: Connection: external network virtual switch
 - Connect Virtual Hard Disk: Size: 44GB
 - Installation Options: ☑ Install an operating system later
