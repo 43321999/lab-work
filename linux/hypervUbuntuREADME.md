@@ -32,5 +32,5 @@
 - ☑︎ Install OpenSSH server
 - ☐ Install docker
 - Reboot Now
-- To remove the installation  medium, click File/Settings.../Firmware/Hard Drive: Move Up
+- To remove the installation  medium, click /Settings.../Firmware/RemoveHard Drive: Move Up
 - Apply/OK
