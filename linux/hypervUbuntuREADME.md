@@ -3,13 +3,14 @@
 ## VM creation
 - Open Hyper-V Manager
 - New/Virtual Machine
-- Specify Name and Location: Name: ubuntu-server-22.164
+- Specify Name and Location: Name: ubuntu-server-00.164
 - Specify Generation: Generation 2
 - Assign Memory: Startup memory: 14336; ☑ Use Dynamic Memory for this virtual machine;
 - Configure networking: Connection: external network virtual switch
 - Connect Virtual Hard Disk: Size: 44GB
 - Installation Options: ☑ Install an operating system later
 - Finish
+- **powershell:** ```Set-VMProcessor -VMName ubuntu-server-00.164 -ExposeVirtualizationExtensions $true```
 - Right click to Virtual Machine and choise Settings...
 - Select Processor
 - Change to 4 Number of virtual processors
@@ -24,9 +25,9 @@
 - Start
 - Done, Done, Done, ..., ...
 - English: ☑︎ language ☑︎ layout ☑︎ variant ☑︎ Ubuntu Server ☑︎ eth0 ☐ Proxy address: ☐ Mirror Address ☑︎ Use an entire disk ☑︎ done ☑︎ continue 
-- Your name: ai
-- Your server's name: 22
-- Pick a username: i
+- Your name: 00
+- Your server's name: 164
+- Pick a username: superadmin
 - Password: **
 - Done
 - ☑︎ Install OpenSSH server
