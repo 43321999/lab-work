@@ -3,5 +3,5 @@
 - ```lxc launch ubuntu: master --vm```
 ## [docker](/docker/README.md)
 - ```lxc shell master```
-- ```su - ubuntu
+- ```su - ubuntu```
 - […](/docker/README.md)
