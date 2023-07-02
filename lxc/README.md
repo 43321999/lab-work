@@ -5,6 +5,3 @@
 - ```lxc shell master```
 - ```su - ubuntu```
 - […](/docker/README.md)
-- ```sudo adduser $USER docker```
-- ```exit```
-- ```su - ubuntu```
