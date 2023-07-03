@@ -35,3 +35,11 @@
 - Reboot Now
 - To remove the installation  medium, click /Settings.../Firmware/RemoveHard Drive: Move Up
 - Apply/OK
+## Ubuntu setup
+- …
+- Profile setup
+- - name: 164
+- - server name: 00
+- - username: superadmin
+- - password: * * (short) | * x 32 (strong)
+- …
