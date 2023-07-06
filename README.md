@@ -10,9 +10,8 @@
 - [overlay storage](nfs/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
-- [X11](gui/README.md)
+- [gui](gui/README.md)
 - [ci/cd](https://github.com/43321999/RuntimeSetup#cicd)
-
 # X11
 
 ## [vpn](https://docs.docker.com/samples/wireguard/)
