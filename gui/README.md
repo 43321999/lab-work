@@ -10,6 +10,6 @@ samples: … | … | …
 samples: [headed inside container](playwright/samples/0.md) | … | …
 ## vnc
 ### shotcut
-samples: [dockerhub](shotcut/samles/0.md) | [computinggeek](shotcut/samples/1.md)
+samples: [dockerhub](shotcut/samples/0.md) | [computinggeek](shotcut/samples/1.md)
 
 
