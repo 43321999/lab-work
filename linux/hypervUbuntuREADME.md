@@ -5,9 +5,9 @@
 - New/Virtual Machine
 - Specify Name and Location: Name: ubuntu-server-00.164
 - Specify Generation: Generation 2
-- Assign Memory: Startup memory: 14336; ☑ Use Dynamic Memory for this virtual machine;
+- Assign Memory: Startup memory: 8192; ☑ Use Dynamic Memory for this virtual machine;
 - Configure networking: Connection: external network virtual switch
-- Connect Virtual Hard Disk: Size: 44GB
+- Connect Virtual Hard Disk: Size: 440GB
 - Installation Options: ☑ Install an operating system later
 - Finish
 - **powershell:** ```Set-VMProcessor -VMName ubuntu-server-00.164 -ExposeVirtualizationExtensions $true```
