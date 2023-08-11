@@ -26,6 +26,29 @@
 [43321999/registry-stack](43321999/registry-stack)
 [registry](https://github.com/43321999/registry-stack)
 [vita kalman comment:](https://vk.com/public130358072?w=wall-130358072_149)
+### docker-stack-registry.yml
+```sh
+root@hub:~/apps# cat registry/docker-stack-registry.yml 
+version: '3.8'
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ../certs:/certs
+    environment:
+      - REGISTRY_HTTP_ADDR=0.0.0.0:5000
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt
+      - REGISTRY_HTTP_TLS_KEY=/certs/domain.key 
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.ip == local
+          #- node.labels.role == manager
+```
 ## X11 swarm services
 ### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
 ```sh
