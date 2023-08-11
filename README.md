@@ -26,7 +26,7 @@
 [43321999/registry-stack](43321999/registry-stack)
 [registry](https://github.com/43321999/registry-stack)
 [vita kalman comment:](https://vk.com/public130358072?w=wall-130358072_149)
-### docker-stack-registry.yml
+### docker-stack-registry.yml ( from kubuntu apps )
 ```sh
 root@hub:~/apps# cat registry/docker-stack-registry.yml 
 version: '3.8'
