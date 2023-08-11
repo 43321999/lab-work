@@ -106,7 +106,75 @@ https://www.asterisk.org
 ```
 
 ## [samba](https://ubuntu.com/server/docs/samba-introduction)
+### file list from kubuntu apps
+smb/docker-stack-node.yml
+```sh
+version: "3.8"
+services:
+  samba:
+    image: 164.gr:5000/noshimorimoshi/smb
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - hub:mnt/smb
+    deploy:
+      placement:
+        constraints:
+          - node.labels.role == node
+      replicas: 2
+      resources:
+        limits:
+          cpus: '1'
+volumes:
+  hub:
+    driver: local
+```
+smb/docker-stack.yml
+```sh
+root@hub:~/apps# cat smb/docker-stack.yml 
+version: "3.8"
+services:
+  samba:
+    image: localhost:5000/noshimorimoshi/smb
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - /samba/:/mnt/smb
+    deploy:
+      placement:
+        constraints:
+          - node.labels.role == manager
+```
+smb/smb.conf
+```sh
+[global]
+        map to guest = Bad User
+        log file = /var/log/samba/%m
+        log level = 10
 
+[guest]
+        path = mnt/smb/shared/
+        read only = no
+        guest ok = yes
+```
+smb/Dockerfile
+```sh
+root@hub:~/apps# cat smb/Dockerfile 
+FROM alpine:3.12.0
+
+RUN apk add --no-cache --update \
+    samba-common-tools \
+    samba-client \
+    samba-server
+
+COPY smb.conf /etc/samba/smb.conf
+
+EXPOSE 139/tcp 445/tcp
+
+CMD ["smbd", "--foreground", "--log-stdout", "--no-process-group"]
+```
 ## ci/cd
 [couple words](vk.com/@-130358072-devops)
 ==============================
