@@ -4,6 +4,7 @@
 - [virtualization](lxc/README.md)
 - [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
+  - svelte
 # Cluster setup:
 - [vIntranet](wireguard/README.md)
 - [orchestrator](swarm/README.md)
