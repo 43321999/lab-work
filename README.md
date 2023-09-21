@@ -50,10 +50,10 @@ services:
           - node.labels.ip == local
           #- node.labels.role == manager
 ```
-## X11 swarm services
+## x11 lxc services
 ### [gimp](docs.microsoft.com/ru-ru/windows/wsl/tutorials/gui-apps#install-gimp)
 ```sh
-        # gimp service
+        # gimp
 
 # sudo apt update
 # sudo apt upgrade -y
@@ -62,6 +62,11 @@ services:
 ```sh
 # krita
 ```
+
+```sh
+# inkscape
+```
+## X11 swarm services
 ## [?!?!node](https://nodejs.org/)
 ```sh
         # swarm service
