@@ -1,6 +1,0 @@
-- docker
-  - [install](https://docs.docker.com/engine/install/ubuntu/)
-  - [post-install](https://docs.docker.com/engine/install/linux-postinstall/)
-    - [rootless mode](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-      - ```sudo adduser $USER docker```
-    - [docker on boot](https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot-with-systemd)
