@@ -1,5 +1,5 @@
 # Runtime setup:
-- [linux distribution](linux/README.md) 
+- [distribution](distribution/README.md) 
 - [virtualization](lxc/README.md)
 - [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
