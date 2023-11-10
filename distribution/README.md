@@ -27,6 +27,8 @@ Graphic installation:
   - GRUB boot loader: sda
 ```shell
 sudo su
+```
+```shell
 apt update
 mkdir /etc/systemd/sleep.conf.d
 vi /etc/systemd/sleep.conf.d/nosuspend.conf
