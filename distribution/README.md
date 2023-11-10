@@ -1,4 +1,11 @@
 # [debian](https://www.debian.org/releases/stable/amd64/index.ru.html)
+
+>>>
+>>> При помощи каких утилит NextCloud, производит объединение дисков в одно логическое хранилище?
+>>>
+>>> youtu.be/afD2_H215JM?si=S8dAdn65ujWDE2Pl
+>>> 
+
 ## hardware debian setup on «American Mega Trends… » bios
 Graphic installation:
   - Installation language: English
