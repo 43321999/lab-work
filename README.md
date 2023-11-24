@@ -7,7 +7,7 @@
 # Cluster setup:
 - [vIntranet](wireguard/README.md)
 - [orchestrator](swarm/README.md)
-- [overlay storage](nfs/README.md)
+- [overlay storage](overlay-storage/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
 - [gui](gui/README.md)
