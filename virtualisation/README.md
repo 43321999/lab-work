@@ -26,3 +26,17 @@ copy this:
 }
 ```
 and paste here: ```/etc/docker/daemon.json```
+
+# enable IPv6
+1. copy this
+```json
+{
+  "ipv6": true
+}
+```
+append to: ```/etc/docker/daemon.json```
+
+2. copy this ```--fixed-cidr-v6=fc0a::/16```
+and edit ```ExecStart``` line of ```/lib/systemd/system/docker.service``` file
+
+3. ``` sudo systemctl restart docker```
