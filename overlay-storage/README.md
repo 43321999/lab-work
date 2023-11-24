@@ -60,5 +60,10 @@ nfsStorage.install().then(() => {
 ```
 /srv/nfs_share *(rw,sync,no_subtree_check)
 ```
+### run
+```shell
+docker build -t [fc0a::]:5000/nfs .
+docker run -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp nfs-service
+```
 ## client
 ### lvm
