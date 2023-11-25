@@ -1,4 +1,9 @@
 # setup
+
+> Why [nfs](https://sungup.github.io/2020/01/15/How-to-Setup-the-NFS-on-Ubuntu.html):
+>
+> \+ Data is transmitted in the transparent form.
+
 ## server
 ### ~/apps/overlay-storage/Dockerfile
 ```dockerfile
