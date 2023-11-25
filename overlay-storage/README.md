@@ -63,7 +63,7 @@ nfsStorage.install().then(() => {
 ```
 ### ~/apps/overlay-storage/exports
 ```
-/srv/nfs_share *(rw,sync,no_subtree_check)
+/public *(rw,sync,no_subtree_check)
 ```
 ### run
 ```shell
