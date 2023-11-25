@@ -12,13 +12,13 @@ RUN apt update
 COPY exports /etc/exports
 COPY main.js /
 EXPOSE 111/udp 111/tcp 2049/udp 2049/tcp
-CMD ["node", "/main.js";]
+CMD ["node", "--experimental-default-type=module", "/main.js"]
 ```
 ### ~/apps/overlay-storage/main.js
 ```javascript
 import { spawn } from 'child_process';
 
-# Паттерн «Цепочка обязанностей» (Chain of Responsibility)
+// Паттерн «Цепочка обязанностей» (Chain of Responsibility)
 class NFSStorage {
   constructor() {
     this.nfsPackageName = 'nfs-kernel-server';
@@ -27,7 +27,7 @@ class NFSStorage {
 
   async install() {
     try {
-      await this.executeCommand('apt-get', ['install', this.nfsPackageName, '-y']);
+      await this.executeCommand('apt', ['install', this.nfsPackageName, '-y']);
       console.log(`Установка ${this.nfsPackageName} выполнена успешно`);
     } catch (error) {
       console.error(`Возникла ошибка при установке ${this.nfsPackageName}`);
@@ -67,8 +67,8 @@ nfsStorage.install().then(() => {
 ```
 ### run
 ```shell
-docker build -t [fc0a::]:5000/nfs .
-docker run -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp nfs-service
+docker build -t localhost:5000/nfs .
+docker run -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
 ```
 ## client
 ### lvm
