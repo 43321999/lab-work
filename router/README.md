@@ -1,3 +1,8 @@
+> - > |
+> - > может быть:
+> - > настроить dns в контейнерах wg для хостов?! 00, 0a, 0b, etc...
+> - > |
+
 The VPN “connection” term is technically false, as WireGuard uses UDP and there is no persistent connection. For proof click [here…](https://ubuntu.com/server/docs/wireguard-vpn-introduction#main-content)
 
 >>> Run wg container Sample
