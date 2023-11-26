@@ -68,7 +68,16 @@ nfsStorage.install().then(() => {
 ### run
 ```shell
 docker build -t localhost:5000/nfs .
-docker run -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
+docker run -d --cap-add=SYS_MODULE -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
 ```
+>
+> ```shell
+> # checking 
+> service nfs-kernel-server status
+> # starting
+> service nfs-kernel-server start
+> ```
+> 
+
 ## client
 ### lvm
