@@ -8,12 +8,13 @@
 ### ~/apps/overlay-storage/Dockerfile
 ```dockerfile
 FROM node:lts-bookworm
-RUN apt update
+RUN apt update && apt install -y nfs-kernel-server
 COPY exports /etc/exports
 COPY main.js /
 EXPOSE 111/udp 111/tcp 2049/udp 2049/tcp
 CMD ["node", "--experimental-default-type=module", "/main.js"]
 ```
+
 ### ~/apps/overlay-storage/main.js
 ```javascript
 import { spawn } from 'child_process';
@@ -57,10 +58,17 @@ class NFSStorage {
   }
 }
 const nfsStorage = new NFSStorage();
-nfsStorage.install().then(() => {
-  nfsStorage.start();
-});
+//nfsStorage.install().then(() => {
+//  nfsStorage.start();
+//});
+nfsStorage.start();
 ```
+>
+> В строку RUN докерфайла, был добавлен следующий текст:  ```&& apt install -y nfs-kernel-server```
+И теперь, код внутри файла /main.js стал дублировать команду установки сервера nfs.
+>
+> С учётом этих изменений, внесённых в Dockerfile, файл /main.js теперь содержит избыточный код. Помоги, пожалуйста, переписать его, убрав оттуда процесс установки. Хотелось бы сохранить объектно-ориентированный подход, import и нативный метод spawn объекта child_process. Учитывая это, помоги мне, пожалуйста, с оптимизацией и рефакторингом файла /main.js
+>
 ### ~/apps/overlay-storage/exports
 ```
 /public *(rw,sync,no_subtree_check)
@@ -68,7 +76,8 @@ nfsStorage.install().then(() => {
 ### run
 ```shell
 docker build -t localhost:5000/nfs .
-docker run -d --cap-add=NET_ADMIN --cap-add=SYS_MODULE -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
+docker run -d --privileged -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
+# флаг --privileged предоставляет контейнеру все привилегии root-пользователя хостовой операционной системы, а также полный доступ к устройствам.
 ```
 >
 > ```shell
