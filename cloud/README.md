@@ -1,86 +1,125 @@
-# setup
+# [nfs]
+gpt3.5 sample:
+## Настройка NFS на Ubuntu
 
-> Why [nfs](https://sungup.github.io/2020/01/15/How-to-Setup-the-NFS-on-Ubuntu.html):
->
-> \+ Data is transmitted in the transparent form.
+1. Установите сервер NFS (Network File System) на вашем компьютере Ubuntu:
 
-## server
-### ~/apps/overlay-storage/Dockerfile
-```dockerfile
-FROM node:lts-bookworm
-RUN apt update && apt install -y nfs-kernel-server
-COPY exports /etc/exports
-COPY main.js /
-EXPOSE 111/udp 111/tcp 2049/udp 2049/tcp
-CMD ["node", "--experimental-default-type=module", "/main.js"]
-```
+    ```shell
+    sudo apt update
+    sudo apt install nfs-kernel-server
+    ```
 
-### ~/apps/overlay-storage/main.js
-```javascript
-import { spawn } from 'child_process';
+2. Создайте директорию, которую вы хотите сделать доступной для других компьютеров. Например, создадим каталог `/srv/nfs_share`:
 
-// Паттерн «Цепочка обязанностей» (Chain of Responsibility)
-class NFSStorage {
-  constructor() {
-    this.nfsPackageName = 'nfs-kernel-server';
-    this.nfsServiceName = 'nfs-kernel-server';
-  }
+    ```shell
+    sudo mkdir -p /public
+    ```
 
-  async install() {
-    try {
-      await this.executeCommand('apt', ['install', this.nfsPackageName, '-y']);
-      console.log(`Установка ${this.nfsPackageName} выполнена успешно`);
-    } catch (error) {
-      console.error(`Возникла ошибка при установке ${this.nfsPackageName}`);
-    }
-  }
+3. Настройте права доступа к этой директории. Например, сделаем так, чтобы она была доступна для чтения и записи всем в сети:
 
-  async start() {
-    try {
-      await this.executeCommand('systemctl', ['start', this.nfsServiceName]);
-      console.log(`${this.nfsServiceName} успешно запущен`);
-    } catch (error) {
-      console.error(`Возникла ошибка при запуске ${this.nfsServiceName}`);
-    }
-  }
+    ```shell
+    sudo chown nobody:nogroup /srv/nfs_share
+    sudo chmod 777 /srv/nfs_share
+    ```
 
-  executeCommand(command, args) {
-    return new Promise((resolve, reject) => {
-      const process = spawn(command, args);
-      process.on('exit', (code) => {
-        if (code === 0) {
-          resolve();
-        } else {
-          reject(new Error(`Exit code: ${code}`));
-        }
-      });
-    });
-  }
-}
-const nfsStorage = new NFSStorage();
-//nfsStorage.install().then(() => {
-//  nfsStorage.start();
-//});
-nfsStorage.start();
-```
-### ~/apps/overlay-storage/exports
-```
-/public *(rw,sync,no_subtree_check)
-```
-### run
+   Обратите внимание, что это настройка безопасности, и в реальной среде вам следует настроить более строгие правила доступа.
+
+4. Отредактируйте файл `/etc/exports`, чтобы указать, какие директории вы хотите сделать доступными через NFS. Добавьте строку в конец файла, указывающую директорию, IP-адрес или диапазон IP-адресов и разрешения доступа. Например:
+
+    ```shell
+    /srv/nfs_share 192.168.1.0/24(rw,sync,no_subtree_check)
+    ```
+
+   В этом примере `/srv/nfs_share` разрешено для записи (rw) для всех устройств в сети с IP-адресами, начинающимися с `192.168.1`.
+
+5. Перезапустите сервер NFS:
+
+    ```shell
+    sudo systemctl restart nfs-kernel-server
+    ```
+
+Теперь ваш сервер NFS должен быть настроен и готов к использованию. На удаленных компьютерах, которым нужен доступ к вашей директории, вы можете монтировать ее с использованием команды `mount`. Например:
+
 ```shell
-docker build -t localhost:5000/nfs .
-docker run -d --privileged -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 2049:2049/udp -v /public:/public localhost:5000/nfs
-# флаг --privileged предоставляет контейнеру все привилегии root-пользователя хостовой операционной системы, а также полный доступ к устройствам.
+sudo mount -t nfs server_ip:/srv/nfs_share /место_монтирования
 ```
->
-> ```shell
-> # checking 
-> service nfs-kernel-server status
-> # starting
-> service nfs-kernel-server start
-> ```
-> 
+Помимо этой базовой настройки, важно также настроить правила Firewall. А wg private network обеспечит безопасность доступа к вашему NFS-серверу, в зависимости от требований вашей среды.
+Firewall: При использовании NFS важно учесть настройки брандмауэра. Порты NFS должны быть открыты на сервере и клиенте. По умолчанию, сервер NFS использует порты 111 (rpcbind) и 2049 (NFS) для связи.
+## Открытие портов для NFS
 
-## client
-### lvm
+Через `iptables`, вот как это сделать:
+
+1. Откройте порты для NFS (порты 111 и 2049 для NFSv3 и NFSv4) с помощью команд `iptables`. Выполните следующие команды:
+
+   ```bash
+   sudo iptables -A INPUT -p tcp --dport 111 -j ACCEPT
+   sudo iptables -A INPUT -p udp --dport 111 -j ACCEPT
+   sudo iptables -A INPUT -p tcp --dport 2049 -j ACCEPT
+   sudo iptables -A INPUT -p udp --dport 2049 -j ACCEPT
+   #
+   # дополнительно для NFSv4:
+   # sudo iptables -A INPUT -p tcp --dport 20048 -j ACCEPT
+   # sudo iptables -A INPUT -p udp --dport 20048 -j ACCEPT
+   #
+   sudo service iptables-persistent save
+   # Эта команда сохранит текущие правила iptables, чтобы они сохранились после перезагрузки сервера.
+```
+ 
+
+
+
+
+## Автоматическое монтирование NFS-ресурсов в Ubuntu при перезагрузках
+
+Чтобы автоматически монтировать NFS-ресурсы при перезагрузках в Ubuntu, используйте файл `/etc/fstab`. В этом файле вы указываете NFS-ресурсы, которые должны быть монтированы автоматически при запуске системы. Вот как это сделать:
+
+1. Откройте файл `/etc/fstab` для редактирования с помощью текстового редактора (например, `sudo nano /etc/fstab`).
+
+2. Добавьте записи для каждого NFS-ресурса, который вы хотите автоматически монтировать. Каждая запись должна иметь следующий формат:
+
+   ```shell
+   server_ip:/remote_directory /local_mount_point nfs options 0 0
+   ```
+Где:
+
+server_ip - IP-адрес сервера NFS.
+/remote_directory - путь к удаленной директории на сервере NFS.
+/local_mount_point - локальная директория, в которую ресурс будет монтироваться.
+nfs - тип файловой системы (NFS).
+options - опции монтирования NFS (например, rw для чтения и записи).
+0 0 - опции для проверки файловой системы (обычно оставляются 0 0).
+Пример записи: ```192.168.1.100:/srv/nfs_share /mnt/nfs_share nfs rw 0 0```
+Тест: ```sudo mount -a```
+
+## Организация резервного копирования NFS с использованием Rsync
+
+Для организации резервного копирования NFS (Network File System) вы можете использовать инструмент Rsync. Вот как это сделать:
+
+1. **Установка Rsync**:
+
+   Если у вас еще не установлен Rsync, выполните следующую команду для его установки:
+
+   ```bash
+   sudo apt update
+   sudo apt install rsync
+   ```
+2. Создание директории для резервных копий:
+Создайте директорию, в которой будут храниться резервные копии. Например: ```sudo mkdir -p /backup/nfs_backup```
+Вставьте следующий скрипт, учитывая, что вы должны заменить source_nfs_directory на путь к вашей NFS-директории и backup_directory на путь к директории для резервных копий:
+```bash
+#!/bin/bash
+
+source_nfs_directory="/mnt/nfs_share"
+backup_directory="/backup/nfs_backup/$(date +%Y-%m-%d_%H-%M-%S)"
+
+rsync -av --delete $source_nfs_directory $backup_directory
+
+# Для удаления старых резервных копий, если это необходимо:
+# find /backup/nfs_backup/ -maxdepth 1 -type d -ctime +7 -exec rm -r {} \;
+```
+Сделайте скрипт исполняемым:
+
+Выполните следующую команду, чтобы сделать скрипт исполняемым: ```sudo chmod +x /usr/local/bin/backup_nfs.sh```
+Запланируйте регулярное резервное копирование:
+
+Используйте cron, чтобы запланировать выполнение регулярных резервных копий. Например, чтобы запустить копирование каждый день в полночь, выполните команду: ```(crontab -l 2>/dev/null; echo "0 0 * * * /usr/local/bin/backup_nfs.sh") | crontab -```
