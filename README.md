@@ -1,14 +1,13 @@
 # Runtime setup:
-- [linux distribution](linux/README.md) 
-- [remote management](ssh/README.md)
-- [virtualization](lxc/README.md)
+- [distribution](distribution/README.md) 
+- [virtualization](virtualisation/README.md)
 - [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
   - svelte
 # Cluster setup:
-- [vIntranet](wireguard/README.md)
+- [router](router/README.md)
 - [orchestrator](swarm/README.md)
-- [overlay storage](nfs/README.md)
+- [cloud](cloud/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
 - [gui](gui/README.md)
