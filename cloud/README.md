@@ -75,10 +75,14 @@ docker run -d --privileged -p 111:111/tcp -p 111:111/udp -p 2049:2049/tcp -p 204
 ```
 >
 > ```shell
+> # server shell
 > # checking 
 > service nfs-kernel-server status
 > # starting
 > service nfs-kernel-server start
+> # client shell
+> # checking
+> showmount -e 192.168.0.4
 > ```
 > 
 
