@@ -106,8 +106,9 @@ dd # [see info here…](https://wiki.centos.org/HowTos/InstallFromUSBkey)
 - [4](https://www.npmjs.com/search?q=cms%20koa%20mongo)
 - [5](https://vk.com/away.php?to=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1DZC8TQz5oNECskVzh1CDCBD89VamNBdXXuQwyAJeoCQ%2Fedit%23gid%3D1994570499&cc_key=)
 ## openvpn server
-## yukon app
+## yukon/arrow/ads app
 - [Node.js and yandex translate api](https://www.youtube.com/watch?v=DsCcK2s6TwU)
+- [transcribe streaming](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/cross-services/transcribe-streaming-app)
 
 ## let's encrypt
 ```sh
