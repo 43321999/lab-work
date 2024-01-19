@@ -10,6 +10,8 @@
 - [cloud](cloud/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
+- [post](postfix/README.md)
+- [task-tracker](wekan/README.md)
 - [gui](gui/README.md)
 - [ci/cd](https://github.com/43321999/RuntimeSetup#cicd)
 # X11
