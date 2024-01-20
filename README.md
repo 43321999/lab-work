@@ -5,7 +5,7 @@
 - [IDE](vscode/README.md)
   - svelte
 # Cluster setup:
-- [dot](dot/README.md)
+- [vpn](vpn/README.md)
 - [orchestrator](swarm/README.md)
 - [cloud](cloud/README.md)
 # Microservices:
