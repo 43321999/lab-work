@@ -1,4 +1,4 @@
-#  tochka | ~~vpn~~ | ~~vintranet~~ | ~~router~~ 
+#  vpn | tochka | ~~dot~~ | ~~vintranet~~ | ~~router~~ 
 
 > - > |
 > - > |
