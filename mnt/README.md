@@ -1,2 +1,2 @@
-# /mnt | ~~pool~~ | ~~data~~ | ~~disk~~ | ~~mount~~ | ~~volume~~ | ~~public~~ | ~~drive~~ | ~~share~~ | ~~allaccess~~
+# mnt | ~~pool~~ | ~~mount~~ | ~~media~~ | ~~data~~ | ~~disk~~ | ~~volume~~ | ~~public~~ | ~~drive~~ | ~~share~~ | ~~allaccess~~
 ## nfs
