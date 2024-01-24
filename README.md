@@ -7,7 +7,7 @@
 # Cluster setup:
 - [vpn](vpn/README.md)
 - [orchestrator](swarm/README.md)
-- [cloud](cloud/README.md)
+- [mnt](mnt/README.md)
 # Microservices:
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
 - [post](postfix/README.md)
