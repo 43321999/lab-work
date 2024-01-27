@@ -1,6 +1,6 @@
 # Runtime setup:
 - [distribution](distribution/README.md) 
-- [virtualization](virtualisation/README.md)
+- [virtualization](docker/README.md)
 - [base image](nodejs/README.md)
 - [IDE](vscode/README.md)
   - svelte
