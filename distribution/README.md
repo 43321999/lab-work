@@ -17,16 +17,20 @@ Graphic installation:
   - superadmin passwd: < zte superadmin >
   - use entire sda disk
   - package manager mirror (Russian Federation): deb.debian.org
-  - blank proxy or test proxy=socks5://ip:port
+  - blank proxy
   - usage statistics: no
   - predefined soft:
     - [x] Debian desktop env
     - [x] GNOME
-    - [x] SSH
+    - [] SSH
     - [x] standard system utilities
   - GRUB boot loader: sda
 ```shell
 sudo su
+apt update
+apt install openssh-server
+vi /etc/ssh/sshd_config
+# setup port 1025
 ```
 ```shell
 apt update
