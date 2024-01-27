@@ -97,4 +97,5 @@ Follow these steps to install Debian 12 with a customized Logical Volume Manager
         - Unallocated physical volumes: none
         - Volume groups: fc (619108MB) - Uses physical volume: /dev/sda1 (500103MB) - Uses physical volume: /dev/sdb1 (119004MB)
 
+[to be continue…](youtu.be/afD2_H215JM?si=S8dAdn65ujWDE2Pl)
 This completes the process of setting up the Logical Volume Manager for the Debian 12 installation.
