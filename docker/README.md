@@ -1,4 +1,4 @@
-# [docker](https://docs.docker.com/engine/install/debian/)
+# [setup](https://docs.docker.com/engine/install/debian/)
 install from [apt repo](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 to replase Docker Compose on Docker Swarm:
 - Remove ```docker-compose-plugin``` from second command of install guide:
