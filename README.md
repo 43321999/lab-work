@@ -1,14 +1,14 @@
 # Runtime setup:
-- [distribution](distribution/README.md) 
+- [distribution](distribution/README.md)
+- [mnt](mnt/README.md)
 - [virtualization](docker/README.md)
-- [base image](nodejs/README.md)
-- [IDE](vscode/README.md)
-  - svelte
 # Cluster setup:
 - [vpn](vpn/README.md)
 - [orchestrator](swarm/README.md)
-- [mnt](mnt/README.md)
+- [base image](nodejs/README.md)
+  - svelte
 # Microservices:
+- [IDE](vscode/README.md)
 - [registry](https://github.com/43321999/RuntimeSetup#registry-service)
 - [post](postfix/README.md)
 - [task-tracker](wekan/README.md)
