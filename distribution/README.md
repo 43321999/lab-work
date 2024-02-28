@@ -48,4 +48,8 @@ AllowSuspendThenHibernate=no
 AllowHybridSleep=no
 ```
 and paste to: ```/etc/systemd/sleep.conf.d/nosuspend.conf```
-```# reboot```
+```sh
+# reboot
+systemctl daemon-reload
+systemctl restart systemd-logind.service
+```
