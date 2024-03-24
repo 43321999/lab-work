@@ -204,6 +204,8 @@ CMD ["smbd", "--foreground", "--log-stdout", "--no-process-group"]
 - locate to Network / LAN / DHCP binding / IP-address: 192.168.0.22
 - paste MAC-address
 
+## ddns
+Service availability is both a reputation and search optimization matter. While resource conservation is important, it is also crucial to maintain a balance between efficiency and the stability of service operations. It is unofficially known that intercontinental DNS caches are set up with the longest possible refresh interval, making the service entirely unavailable to other continents if the IP address updates more often than once every two days. Furthermore, in the "road warrior" VPN model, when all nodes have dynamic IP addresses, there is a minimal, yet present risk of simultaneous IP updates, resulting in network downtime and requiring time for manual recovery. Additionally, developing any kind of service requires time, attention, and responsibility, which are better directed towards noble grand desires. Therefore, despite a strong inclination, the decision was taken to abandon the idea of DDNS in favor of acquiring a static IP address.
 
 > 
 > __docker reccomends:__
