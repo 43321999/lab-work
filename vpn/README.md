@@ -52,7 +52,7 @@ iface enp1s0 inet6 static
 -  Prefix length: 8
 3. ```sudo route -n add -inet6 fd0c::/16 -gateway fd00::```
    or
-   ```cat /usr/local/bin/add_route.sh```
+   ```sudo vi /usr/local/bin/add_route.sh```
    ```sh
    #!/bin/sh
 
@@ -60,8 +60,8 @@ iface enp1s0 inet6 static
    sudo route -n add -inet6 fd0c::/16 -gateway fd00::   
    ```
    ```sh
-   chmod +x /usr/local/bin/add_route.sh
-   mv /usr/local/bin/add_route.sh ~/Library/LaunchAgents/ # System Preferences > User & Groups > Login Items
+   sudo chmod +x /usr/local/bin/add_route.sh
+   sudo mv /usr/local/bin/add_route.sh ~/Library/LaunchAgents/ # System Preferences > User & Groups > Login Items
    sudo reboot
    ```
  5. ```ping6 -c 1 fd0c::```
