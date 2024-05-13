@@ -61,7 +61,30 @@ iface enp1s0 inet6 static
    ```
    ```sh
    sudo chmod +x /usr/local/bin/add_route.sh
-   sudo mv /usr/local/bin/add_route.sh ~/Library/LaunchAgents/ # System Preferences > User & Groups > Login Items
-   sudo reboot
+   sudo vi ~/Library/LaunchAgents/com.user.addroute.plist
    ```
+   ```sh
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+   <dict>
+     <key>Label</key>
+     <string>com.user.addroute</string>
+     <key>ProgramArguments</key>
+     <array>
+       <string>/usr/local/bin/add_route.sh</string>
+     </array>
+     <key>RunAtLoad</key>
+     <true/>
+     <key>LaunchOnlyOnce</key>
+     <true/>
+   </dict>
+   </plist>
+   ```
+  ```sh
+  launchctl load ~/Library/LaunchAgents/com.user.addroute.plist
+  ping6 -c 1 fd0c::
+  ```
+  ```sh
+   sudo reboot
  5. ```ping6 -c 1 fd0c::```
