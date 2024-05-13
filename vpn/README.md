@@ -1,17 +1,10 @@
-#  vpn | ~~tochka~~ | ~~dot~~ | ~~vintranet~~ | ~~router~~ 
+#  vpn
+## 00
 
-> - > |
-> - > |
-> - > может быть:
-> - > настроить dns в контейнерах wg для хостов?! 00, 0a, 0b, etc...
-> - > |
-
-The VPN “connection” term is technically false, as WireGuard uses UDP and there is no persistent connection. For proof click [here…](https://ubuntu.com/server/docs/wireguard-vpn-introduction#main-content)
-
->>> Run wg container Sample
->>> ```sh
->>>   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
->>>   --sysctl="net.ipv6.conf.all.forwarding=1" \
->>>   --cap-add=NET_ADMIN # предоставляет контейнеру администрирование сетевых интерфейсов..
->>> ```
+## 01
+1. Системные настройки: Настроить сетевой интерфейс через GUI в разделе "Системные настройки" > "Сеть" > network > advanced > TCP/IP:
+-  IPv6 address: fd01::
+-  Prefix length: 8
+3. ```sudo route -n add -inet6 fd0c::/16 -gateway fd00::```
+4. ```ping6 -c 1 fd0c::```
 
