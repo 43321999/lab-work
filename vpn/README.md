@@ -38,10 +38,11 @@ PersistentKeepAlive = 25
 ```
 ```
 # wg-quick up fd0c
+systemctl status wg-quick@fd0c
 systemctl enable wg-quick@fd0c
 
 systemctl status wg-quick@fd0c
-stemctl start wg-quick@fd0c
+systemctl start wg-quick@fd0c
 
 # systemctl stop wg-quick@fd0c
 # systemctl disable wg-quick@fd0c
