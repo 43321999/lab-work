@@ -63,7 +63,7 @@ iface enp1s0 inet6 static
    ```
    ```sh
    sudo chmod +x /usr/local/bin/add_route.sh
-   sudo vi ~/Library/LaunchDaemons/com.user.delayedroute.plist
+   sudo vi /Library/LaunchDaemons/com.user.delayedroute.plist
    ```
    ```sh
    <?xml version="1.0" encoding="UTF-8"?>
