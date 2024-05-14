@@ -18,7 +18,34 @@ iface ens128 inet6 static
     address fd00::
     netmask 8
 ```
+```sh
+cd /etc/wireguard/
+umask 077
+wg genkey | tee privatekey | wg pubkey > publickey
+```
+```sh
+root@00:/etc/wireguard# cat fd0c.conf
+[Interface]
+PrivateKey = aaasasdfajskdfja;sldajskfl=
+listenPort = 1025
+Address = fd00::/16
 
+[Peer]
+PublicKey = aaasssdfdfdsa';lksdfasdfasd=
+AllowedIPs = fd0c::/16
+Endpoint = 192.0.2.1:1025
+PersistentKeepAlive = 25
+```
+```
+# wg-quick up fd0c
+systemctl enable wg-quick@fd0c
+
+systemctl status wg-quick@fd0c
+stemctl start wg-quick@fd0c
+
+# systemctl stop wg-quick@fd0c
+# systemctl disable wg-quick@fd0c
+```
 ## 0a
 1.
 ```sh
