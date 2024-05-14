@@ -81,6 +81,7 @@ iface enp1s0 inet6 static
    </dict>
    </plist>
    ```
+-  Выполнив ```visudo```, прокрутить до раздела, "User specification" и добавить ```fd ALL=(ALL) NOPASSWD: /usr/local/bin/add_route.sh```
   ```sh
   launchctl load ~/Library/LaunchAgents/com.user.addroute.plist
   ping6 -c 1 fd0c::
