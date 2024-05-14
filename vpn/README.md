@@ -82,7 +82,34 @@ ip -6 route show
 ## 0b
 
 ## 0c
+```sh
+cd /etc/wireguard/
+umask 077
+wg genkey | tee privatekey | wg pubkey > publickey
+```
+```sh
+root@instance:/etc/wireguard# cat fd00.conf
+[Interface]
+Address = fd0c::/16
+SaveConfig = true
+ListenPort = 1025
+PrivateKey = jka;ljaaasssdfdfdsa';lksdfasdfasd=
 
+[Peer]
+PublicKey = pwierqpwoeiruaaasssdfdfdsa';lksdfasdfasd=
+AllowedIPs = fd00::/8
+```
+```
+# wg-quick up fd0c
+systemctl status wg-quick@fd0c
+systemctl enable wg-quick@fd0c
+
+systemctl status wg-quick@fd0c
+systemctl start wg-quick@fd0c
+
+# systemctl stop wg-quick@fd0c
+# systemctl disable wg-quick@fd0c
+```
 ## 1b
 
 ## 1c
