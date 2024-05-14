@@ -20,6 +20,7 @@ iface ens128 inet6 static
 ```
 
 ## 0a
+1.
 ```sh
 cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
@@ -36,8 +37,20 @@ iface enp1s0 inet dhcp
 
 iface enp1s0 inet6 static
     address fd0a::
-    netmask 8 
+    netmask 8
+    # Добавьте маршрут на интерфейс
+    up ip -6 route add fd0c::/16 via fd00:: dev enp1s0
+    # Убедитесь, что маршрут удаляется при отключении интерфейса
+    down ip -6 route del fd0c::/16 via fd00:: dev enp1s0
 ```
+2.
+```sudo ifdown enp1s0 && sudo ifup enp1s0```
+or
+```sh
+sudo systemctl restart networking
+ip -6 route show
+```
+3. test
 ## 0b
 
 ## 0c
@@ -85,10 +98,12 @@ iface enp1s0 inet6 static
     </dict>
     </plist>
    ```
+  5. test
   ```sh
   sudo launchctl load /Library/LaunchDaemons/com.user.delayedroute.plist
   ping6 -c 1 fd0c::
   ```
   ```sh
    sudo reboot
- 5. ```ping6 -c 1 fd0c::```
+   ping6 -c 1 fd0c::
+  ```
