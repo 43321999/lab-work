@@ -57,7 +57,7 @@ iface enp1s0 inet6 static
    #!/bin/sh
 
    # Добавление маршрута при запуске
-   sudo route -n add -inet6 fd0c::/16 -gateway fd00::   
+   route -n add -inet6 fd0c::/16 -gateway fd00::   
    ```
    ```sh
    sudo chmod +x /usr/local/bin/add_route.sh
