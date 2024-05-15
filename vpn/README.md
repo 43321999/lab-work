@@ -101,14 +101,14 @@ AllowedIPs = fd00::/8
 ```
 ```
 # wg-quick up fd0c
-systemctl status wg-quick@fd0c
-systemctl enable wg-quick@fd0c
+systemctl status wg-quick@fd00
+systemctl enable wg-quick@fd00
 
-systemctl status wg-quick@fd0c
-systemctl start wg-quick@fd0c
+systemctl status wg-quick@fd00
+systemctl start wg-quick@fd00
 
-# systemctl stop wg-quick@fd0c
-# systemctl disable wg-quick@fd0c
+# systemctl stop wg-quick@fd00
+# systemctl disable wg-quick@fd00
 ```
 ## 1b
 
