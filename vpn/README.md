@@ -80,7 +80,36 @@ ip -6 route show
 ```
 3. test
 ## 0b
+```sh
+fd@0b:~$ cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto enp2s0
+iface enp2s0 inet dhcp
+
+iface enp2s0 inet6 static
+    address fd0b::
+    netmask 8
+    # Добавьте маршрут на интерфейс
+    up ip -6 route add fd0c::/16 via fd00:: dev enp2s0
+    # Убедитесь, что маршрут удаляется при отключении интерфейса
+    down ip -6 route del fd0c::/16 via fd00:: dev enp2s0
+```
+2.
+```sudo ifdown enp2s0 && sudo ifup enp2s0```
+or
+```sh
+sudo systemctl restart networking
+ip -6 route show
+```
+3. test
 ## 0c
 ```sh
 cd /etc/wireguard/
