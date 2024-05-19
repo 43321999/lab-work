@@ -25,7 +25,7 @@ umask 077
 wg genkey | tee privatekey | wg pubkey > publickey
 ```
 ```sh
-root@00:/etc/wireguard# cat fd0c.conf
+root@00:/etc/wireguard# cat fd0c.conf # rename to fd0.conf
 [Interface]
 PrivateKey = aaasasdfajskdfja;sldajskfl=
 listenPort = 1025
@@ -115,7 +115,7 @@ umask 077
 wg genkey | tee privatekey | wg pubkey > publickey
 ```
 ```sh
-root@instance:/etc/wireguard# cat fd00.conf
+root@instance:/etc/wireguard# cat fd00.conf # rename to fd0.conf
 [Interface]
 Address = fd0c::/16
 SaveConfig = true
@@ -144,7 +144,7 @@ umask 077
 wg genkey | tee privatekey | wg pubkey > publickey
 ```
 ```sh
-root@instance:/etc/wireguard# cat fd00.conf
+root@instance:/etc/wireguard# cat fd00.conf # rename to fd0.conf
 [Interface]
 Address = fd1b::/16
 SaveConfig = true
@@ -168,16 +168,18 @@ systemctl start wg-quick@fd00
 ```
 ```sh
 # root@00:/etc/wireguard#
+cat fd0c.conf # rename to fd0.conf
 echo "
 
 [Peer]
 PublicKey = aaasssdfdfdsa';lksdfasdfasd=
 AllowedIPs = fd1b::/16
 Endpoint = 192.0.2.1:1025
-PersistentKeepAlive = 25" >> fd0c.conf
+PersistentKeepAlive = 25" >> fd0c.conf # rename to fd0.conf
 
 # root@00:/etc/wireguard#
 systemctl restart wg-quick@fd0c
+ping -c 1 fd1b::
 ```
 ```sh
 # root@0a:~#
@@ -185,6 +187,7 @@ echo "    up ip -6 route add fd1b::/16 via fd00:: dev enp1s0
     down ip -6 route del fd1b::/16 via fd00:: dev enp1s0" >> /etc/network/interfaces
 
 # root@0a:~#
+cat /etc/network/interfaces
 sudo ifdown enp1s0 && sudo ifup enp1s0
 ping -c 1 fd1b::
 
@@ -193,6 +196,7 @@ ping -c 1 fd0a::
 ```
 ```sh
 # root@0b:~#
+cat /etc/network/interfaces
 echo "    up ip -6 route add fd1b::/16 via fd00:: dev enp2s0
     down ip -6 route del fd1b::/16 via fd00:: dev enp2s0" >> /etc/network/interfaces
 
@@ -205,14 +209,101 @@ ping -c 1 fd0b::
 ```
 ```sh
 # fd@01:~#
-sudo route -n add -inet6 fd1b::/16 -gateway fd00::
+su -
+echo "route -n add -inet6 fd1b::/16 -gateway fd00::" >> /usr/local/bin/add_route.sh
+# chmod +x /usr/local/bin/add_route.sh
+# launchctl unload /Library/LaunchDaemons/com.user.delayedroute.plist
+# launchctl load /Library/LaunchDaemons/com.user.delayedroute.plist
+bash /usr/local/bin/add_route.sh
 ping6 -c 1 fd1b::
 
 # root@1b:~#
 ping -c 1 fd01::
 ```
 ### 1c
+```sh
+# root@1c:/etc/wireguard# 
+umask 077
+wg genkey | tee privatekey | wg pubkey > publickey
+```
+```sh
+# root@1c:/etc/wireguard#
+cat fd00.conf # rename to fd0.conf
+[Interface]
+Address = fd1c::/16
+SaveConfig = true
+ListenPort = 1025
+PrivateKey = jka;ljaaasssdfdfdsa';lksdfasdfasd=
 
+[Peer]
+PublicKey = pwierqpwoeiruaaasssdfdfdsa';lksdfasdfasd=
+AllowedIPs = fd00::/8
+```
+```
+# wg-quick up fd0c
+systemctl status wg-quick@fd00
+systemctl enable wg-quick@fd00
+
+systemctl status wg-quick@fd00
+systemctl start wg-quick@fd00
+
+# systemctl stop wg-quick@fd00
+# systemctl disable wg-quick@fd00
+```
+```sh
+# root@00:/etc/wireguard#
+cat fd0c.conf # rename to fd0.conf
+echo "
+
+[Peer]
+PublicKey = aaasssdfdfdsa';lksdfasdfasd=
+AllowedIPs = fd1c::/16
+Endpoint = 192.0.2.1:1025
+PersistentKeepAlive = 25" >> fd0c.conf # rename to fd0.conf
+
+# root@00:/etc/wireguard#
+systemctl restart wg-quick@fd0c
+ping -c 1 fd1c::
+```
+```sh
+# root@0a:~#
+cat /etc/network/interfaces
+echo "    up ip -6 route add fd1c::/16 via fd00:: dev enp1s0
+    down ip -6 route del fd1c::/16 via fd00:: dev enp1s0" >> /etc/network/interfaces
+
+# root@0a:~#
+sudo ifdown enp1s0 && sudo ifup enp1s0
+ping -c 1 fd1c::
+
+# root@1c:~#
+ping -c 1 fd0a::
+```
+```sh
+# root@0b:~#
+cat /etc/network/interfaces
+echo "    up ip -6 route add fd1c::/16 via fd00:: dev enp2s0
+    down ip -6 route del fd1c::/16 via fd00:: dev enp2s0" >> /etc/network/interfaces
+
+# root@0b:~#
+sudo ifdown enp2s0 && sudo ifup enp2s0
+ping -c 1 fd1c::
+
+# root@1c:~#
+ping -c 1 fd0b::
+```
+```sh
+# fd@01:~#
+su -
+echo "route -n add -inet6 fd1c::/16 -gateway fd00::" >> /usr/local/bin/add_route.sh
+# chmod +x /usr/local/bin/add_route.sh
+# launchctl unload /Library/LaunchDaemons/com.user.delayedroute.plist
+# launchctl load /Library/LaunchDaemons/com.user.delayedroute.plist
+bash /usr/local/bin/add_route.sh
+ping6 -c 1 fd1c::
+
+# root@1c:~#
+ping -c 1 fd01::
+```
 ## 01
 1. System Preferences > network > advanced > TCP/IP:
 -  IPv6 address: fd01::
