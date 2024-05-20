@@ -1,9 +1,9 @@
 # Runtime setup:
 - [distribution](distribution/README.md)
-- [mnt](mnt/README.md)
-- [virtualization](docker/README.md)
 # Cluster setup:
 - [vpn](vpn/README.md)
+- [mnt](mnt/README.md)
+- [virtualization](docker/README.md)
 - [orchestrator](swarm/README.md)
 - [base image](nodejs/README.md)
   - svelte
