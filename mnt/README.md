@@ -36,6 +36,7 @@
 5. Перезапустите сервер NFS:
 
     ```shell
+    sudo exportfs -a
     sudo systemctl restart nfs-kernel-server
     ```
 
