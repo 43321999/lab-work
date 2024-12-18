@@ -1,6 +1,7 @@
 # mnt | ~~pool~~ | ~~mount~~ | ~~media~~ | ~~data~~ | ~~disk~~ | ~~volume~~ | ~~public~~ | ~~drive~~ | ~~share~~ | ~~allaccess~~ | ~~ssd~~ | ~~hdd~~ | ~~flash~~ | ~~stick~~ | ~~floppy~~ | ~~cd~~ | ~~dvd~~ | ~~tape~~ | ~~vinyl~~ |
 ## nfs
 
+Сначала необходимо смонтировать физический том (или файловую систему), затем настроить права доступа на точку монтирования, и только после этого настраивать экспорт NFS.
 ## Настройка NFS на Ubuntu
 
 1. Установите сервер NFS (Network File System) на вашем компьютере Ubuntu:
