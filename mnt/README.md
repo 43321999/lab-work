@@ -26,7 +26,7 @@ sudo mount /dev/md127 /mnt
 
     ```shell
     sudo chown -R nobody:nogroup /mnt
-    sudo chmod -R 777 /srv/mnt
+    sudo chmod -R 777 /mnt
     ```
 
    Обратите внимание, что это настройка безопасности, и в реальной среде вам следует настроить более строгие правила доступа.
