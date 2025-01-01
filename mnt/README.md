@@ -7,7 +7,7 @@
 0. Монтирование
     ```sh
     sudo sudo chown nobody:nogroup /srv/nfs_share
-sudo mount /dev/md127 /mnt
+    sudo mount /dev/md127 /mnt
     ```
 2. Установите сервер NFS (Network File System) на вашем компьютере Ubuntu:
 
