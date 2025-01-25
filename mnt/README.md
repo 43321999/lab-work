@@ -53,9 +53,10 @@ sudo mount -t nfs 192.168.0.4:/mnt/00 /место_монтирования
 # NFS client OSX 
 ```sh
 sudo mkdir -p /Volumes/nfs
+# sudo chmod 777 /Volumes/nfs
 # csrutil status
 # csrutil disable
-sudo mount -t nfs -o resvport 192.168.0.4:/mnt/00 /Volumes/nfs
+sudo mount -t nfs -o resvport,rw,bg,hard,nointr,rsize=262144,wsize=262144,tcp,noatime 192.168.0.4:/mnt/00 /Volumes/nfs
 ```
 
 # NFS client WINDOWS
