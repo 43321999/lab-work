@@ -96,7 +96,7 @@ PersistentKeepAlive = 26
 ```ini
 
 ```
-# 🇰🇿
+# 🇸🇪 (1a ex.🇰🇿)
 ## server
 ```ini
 
