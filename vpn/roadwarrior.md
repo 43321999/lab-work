@@ -1,5 +1,5 @@
 # 🇷🇺
-## fd01.conf
+## 01.fd.conf
 ```ini
 # fd00
 [Interface]
@@ -14,7 +14,7 @@ PrivateKey = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
 PublicKey = YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY=
 AllowedIPs = 10.0.0.2/32
 ```
-## fd00.conf
+## 00.fd.conf
 ```ini
 # fd01
 [Interface]
@@ -30,7 +30,7 @@ AllowedIPs = 0.0.0.0/0
 Endpoint = <ЗАГЛУШКА_ENDPOINT_IP>:1026
 PersistentKeepAlive = 25
 ```
-## fd00.conf
+## 00.fd.conf
 ```ini
 
 # fd01
@@ -48,7 +48,7 @@ Endpoint = <ЗАГЛУШКА_ENDPOINT_IP>:1026
 PersistentKeepAlive = 26
 ```
 # 🇺🇸
-## fd01.conf
+## 01.fd.conf
 ```ini
 [Interface]
 Address = 10.0.1.1/24
@@ -62,7 +62,7 @@ PrivateKey = <PRIVATE_KEY_PLACEHOLDER>
 PublicKey = <PUBLIC_KEY_PLACEHOLDER>
 AllowedIPs = 10.0.1.2/32
 ```
-## fd1c.conf
+## 1c.fd.conf
 ```ini
 # fd01
 [Interface]
@@ -96,7 +96,7 @@ PersistentKeepAlive = 26
 ```ini
 
 ```
-# 🇸🇪 (1a ex.🇰🇿)
+# 🇰🇿
 ## server
 ```ini
 
