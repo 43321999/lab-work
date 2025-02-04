@@ -14,17 +14,17 @@
     sudo chown nobody:nogroup /mnt/00
     sudo mount /dev/md127 /mnt/00
     ```
-2. Установите сервер NFS (Network File System) на вашем компьютере Ubuntu:
-
-    ```shell
-    sudo apt update
-    sudo apt install -y nfs-kernel-server
-    ```
 4. Настройте права доступа к этой директории. Например, сделаем так, чтобы она была доступна для чтения и записи всем в сети:
 
     ```shell
     sudo chown -R nobody:nogroup /mnt/00
     sudo chmod -R 777 /mnt/00
+    ```
+2. Установите сервер NFS (Network File System) на вашем компьютере Ubuntu:
+
+    ```shell
+    sudo apt update
+    sudo apt install -y nfs-kernel-server
     ```
 
    Обратите внимание, что это настройка безопасности, и в реальной среде вам следует настроить более строгие правила доступа.
